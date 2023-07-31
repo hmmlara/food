@@ -45,9 +45,10 @@
             </a>
 					</li>
 
-					<li class="sidebar-item <?php echo basename($curr_url) == 'sub_category.php' ? 'active' : ''; ?>">
-						<a class="sidebar-link" href="sub_category.php">
-              <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sub_Category</span>
+					
+					<li class="sidebar-item <?php echo basename($curr_url) == 'payments.php' ? 'active' : ''; ?>">
+						<a class="sidebar-link" href="payments.php">
+              <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Payments</span>
             </a>
 					</li>
 

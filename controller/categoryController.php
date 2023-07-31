@@ -5,9 +5,9 @@ class CategoryController extends Category{
             return $this->getCategoriesList();
         }
 
-        public function addCategory($name,$sub_cat_name)
+        public function addCategory($name)
         {
-            return $this->createCategory($name,$sub_cat_name);
+            return $this->createCategory($name);
 
         }
 
@@ -16,9 +16,9 @@ class CategoryController extends Category{
             return $this->getCategoryInfo($id);
         }
 
-        public function editCategory($id,$name,$sub_cat_name)
+        public function editCategory($id,$name)
         {
-            return $this->updateCategory($id,$name,$sub_cat_name);
+            return $this->updateCategory($id,$name);
         }
 
         public function deleteCategory($id)

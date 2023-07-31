@@ -28,9 +28,11 @@
 		</div>
 	</div>
 
+
 	<script src="../js/app.js"></script>
 	<script src="../js/myscript.js"></script>
 	<script src="../js/jquery-3.7.0.min.js"></script>
+
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {

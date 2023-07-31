@@ -6,8 +6,7 @@ $cat_con=new categoryController();
 if(isset($_POST['submit']))
 {
     $name=$_POST['name'];
-	$sub_cat_name=$_POST['sub_cat_name'];
-    $status=$cat_con->addCategory($name,$sub_cat_name);
+    $status=$cat_con->addCategory($name);
     if($status)
     {
         // header('location:category.php');
@@ -27,10 +26,6 @@ if(isset($_POST['submit']))
 								<div>
 									<label for="" class="form-label">Category</label>
 									<input type="text" name="name" class="form-control">
-								</div>
-								<div>
-									<label for="" class="form-label">Sub Category</label>
-									<input type="text" name="sub_cat_name" class="form-control">
 								</div>
 								<div class="mt-3">
 									<button class="btn btn-dark" name="submit">Add</button>

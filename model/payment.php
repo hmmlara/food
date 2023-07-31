@@ -1,13 +1,13 @@
 <?php
 include_once __DIR__.'/../vendor/db.php';
 
-class Category{
-    public function getCategoriesList(){
+class Payment{
+    public function getPaymentList(){
         //1. db connection
         $con=Database::connect();
         $con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         //2.write sql
-        $sql="select * from category";
+        $sql="select * from payment";
         $statement=$con->prepare($sql);
 
         //3.sql excute
@@ -24,15 +24,15 @@ class Category{
     }
 
 
-    public function createCategory($name)
+    public function createPayment($payment_type)
     {
                 //1. db connection
                 $con=Database::connect();
                 $con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                 //2.write sql
-                $sql='insert into category(name) values (:name)';
+                $sql='insert into payment(payment_type) values (:payment_type)';
                 $statement=$con->prepare($sql);
-                $statement->bindParam(':name',$name);
+                $statement->bindParam(':payment_type',$payment_type);
                 if($statement->execute())
                 {
                     return true;
@@ -42,17 +42,16 @@ class Category{
                 }
     }
 
-    
-    public function getCategoryInfo($id)
+
+    public function getPaymentInfo($id)
     {
                         //1. db connection
                         $con=Database::connect();
                         $con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                         //2.write sql
-                        $sql='select * from category where id=:id';
+                        $sql='select * from payment where id=:id';
                         $statement=$con->prepare($sql);
                         $statement->bindParam(':id',$id);
-
                         if($statement->execute())
                         {
                             $result=$statement->fetch(PDO::FETCH_ASSOC);
@@ -60,15 +59,15 @@ class Category{
                         }
     }
 
-    public function updateCategory($id,$name)
+    public function updatePayment($id,$payment_type)
     {
         //1. db connection
         $con=Database::connect();
         $con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         //2.WRITE SQL
-        $sql='update category set name=:name where id=:id';
+        $sql='update payment set payment_type=:payment_type where id=:id';
         $statement=$con->prepare($sql);
-        $statement->bindParam(':name',$name);
+        $statement->bindParam(':payment_type',$payment_type);
         $statement->bindParam(':id',$id);
         if($statement->execute())
         {
@@ -80,13 +79,13 @@ class Category{
     }
 
   
-    public function deleteCategoryInfo($id)
+    public function deletePaymentInfo($id)
     {
         //1. db connection
         $con=Database::connect();
         $con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         //2.write sql
-        $sql='delete from category where id=:id';
+        $sql='delete from payment where id=:id';
         $statement=$con->prepare($sql);
         $statement->bindParam(':id',$id);
         try{
@@ -101,3 +100,4 @@ class Category{
 
 }
 ?>
+

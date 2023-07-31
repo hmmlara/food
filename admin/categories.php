@@ -33,7 +33,6 @@ $categories=$cat_controller->getCategories();
                                         <tr>
                                             <th>No</th>
                                             <th>Name</th>
-                                            <th>Sub Category Name</th>
                                             <th>Actions</th>
                                         </tr>  
                                     </thead>
@@ -45,7 +44,6 @@ $categories=$cat_controller->getCategories();
                                                 echo "<tr >";
                                                 echo "<td>".$count++."</td>";
                                                 echo "<td>" .$category['name']."</td>";
-                                                echo "<td>".$category['sub_cat_name']."</td>";
                                                 echo "<td id='".$category['id']."'><a class='btn btn-success mx-3' href='edit_category.php?id=".$category['id']."'>Edit </a> <button class='btn btn-danger mx-3 btn_delete'>Delete </button> </td>";
                                                 echo "</tr>";
                                             }
